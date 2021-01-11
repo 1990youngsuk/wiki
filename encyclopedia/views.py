@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from . import util
+from entries import *
 
 
 def index(request):
@@ -24,6 +25,16 @@ def entry(request, entry):
 def entry(request, entry):
     Title = util.get_entry(entry)
     if Title is None:
+        return render(request, "encyclopedia/nopage.html")
+    else:
+        return render(request, "encyclopedia/entries.html", {
+            "EntryTitle": entry
+        })
+
+
+def search(request, entry):
+    Check = util.get_entry(entry)
+    if Check is None:
         return render(request, "encyclopedia/nopage.html")
     else:
         return render(request, "encyclopedia/entries.html", {
