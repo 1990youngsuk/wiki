@@ -21,6 +21,5 @@ from encyclopedia import util
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include("encyclopedia.urls")),
-    path("<str:name>", util.list_entries, name="entries")
+    path('', include("encyclopedia.urls"))
 ]
