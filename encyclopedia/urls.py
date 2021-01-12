@@ -7,3 +7,6 @@ urlpatterns = [
     path("wiki/<str:entry>", views.entry, name="entry"),
     path("wiki/?q=<str:entry>", views.search, name="search")
 ]
+
+
+#서치 부분 url로 고치려고 하는중#
